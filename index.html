@@ -9,6 +9,70 @@
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
   <body>
+    <header class="vh-100 overflow-auto">
+      <div class="container-fluid bookmark w-80">
+        <h2 class="text-secondary-emphasis fs-2 ms-4">Bookmarker</h2>
+        <hr class="mt-5 w-100" />
+        <div class="content w-95 m-auto">
+          <div class="container-fluid w-80 text-black text-center">
+            <h4>Bookmark your favorite sites</h4>
+            <label for="siteName" class="mb-3 mt-3 fs-6 fw-bold d-block"
+              >Site Name</label
+            >
+
+            
+
+
+
+            <input
+              type="text"
+              placeholder="Bookmark Name"
+              id="siteName"
+              class="form-control-sm w-100"
+            />
+
+            <div id="site-name-warrning">
+            
+          </div>
+
+
+
+            <label for="siteName" class="mb-3 mt-3 fs-6 fw-bold d-block"
+              >Site URL</label
+            >
+
+            <input
+              type="text"
+              placeholder="website URL"
+              id="websiteURL"
+              class="form-control-sm w-100"
+            />
+            <div id="site-url-warrning">
+              
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-primary mt-4 submit"
+              id="submitBtn"
+              onclick="addNewSite()"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+
+        <div class="w-95 mt-4 m-auto">
+          <table class="table table-borderless">
+            <thead></thead>
+            <tbody id="tbody" class=""></tbody>
+          </table>
+        </div>
+
+        <hr class="mt-5 w-100" />
+      </div>
+    </header>
+
     <script src="./JS/bootstrap.bundle.min.js"></script>
     <script src="./JS/script.js"></script>
   </body>
