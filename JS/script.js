@@ -141,12 +141,6 @@ function search() {
         `;
     }
   }
-
-  console.log("dadsadasasdasdasdsadsadsaaaaa")
-
   tbody.innerHTML = placeHolder;
   
 }
-
-var x="d"
-x.includes()
