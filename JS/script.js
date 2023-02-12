@@ -1,6 +1,9 @@
 bookmarkName = document.getElementById("siteName");
 websiteUrl = document.getElementById("websiteURL");
 allSites = [];
+if( localStorage.getItem("allSites")!= null ){
+  allSites = JSON.parse(localStorage.getItem("allSites"))
+}
 
 function addNewSite() {
   if (bookmarkName.value == "" && websiteUrl.value == "") {
@@ -52,13 +55,13 @@ function addNewSite() {
 
     displayAllSites();
     clearForm();
+    localStorage.setItem("allSites", JSON.stringify(allSites));
   }
 }
 
 function displayAllSites() {
   var tbody = document.getElementById("tbody");
   var container = "";
-  console.log(allSites);
   for (var i = 0; i < allSites.length; i++) {
     container += `
     <tr class="table-cell">
@@ -109,7 +112,7 @@ function clearForm() {
   websiteUrl.value = "";
 }
 
-function search() {
+function search() { 
   searchInput = document.getElementById("searchInput");
   var term = searchInput.value.toLowerCase();
   console.log(term)
@@ -144,3 +147,7 @@ function search() {
   tbody.innerHTML = placeHolder;
   
 }
+
+
+
+console.log("json here",JSON.parse(localStorage.getItem("allSites")))
