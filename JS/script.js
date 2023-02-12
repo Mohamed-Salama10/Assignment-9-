@@ -108,3 +108,45 @@ function clearForm() {
   bookmarkName.value = "";
   websiteUrl.value = "";
 }
+
+function search() {
+  searchInput = document.getElementById("searchInput");
+  var term = searchInput.value.toLowerCase();
+  console.log(term)
+  var tbody = document.getElementById("tbody");
+  placeHolder = "";
+  for (let index = 0; index < allSites.length; index++) {
+    if (
+      allSites[index].name.toLocaleLowerCase().includes(term) ==true
+    ) {
+      placeHolder += `
+    <tr class="table-cell">
+    <td class="w-25 pt-4 ps-5">
+      <p class="fs-4 fw-bold">${allSites[index].name}</p>
+    </td>
+
+    <td class="pt-4">
+      <a
+        href="${allSites[index].url}"
+        id="visistAnchor"
+        target="_blank"
+      >
+        <button class="btn btn-primary submit">visit</button>
+      </a>
+
+      <button class="btn btn-danger submit" onclick="deleteSite(${index})">Delete</button>
+    </td>
+  </tr>
+
+        `;
+    }
+  }
+
+  console.log("dadsadasasdasdasdsadsadsaaaaa")
+
+  tbody.innerHTML = placeHolder;
+  
+}
+
+var x="d"
+x.includes()
